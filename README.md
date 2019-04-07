@@ -60,6 +60,9 @@ The contents of the configuration file are as follows.
 - pools: 矿池地址的是相关配置。最多写三个。`数组`
   - ["<矿池地址>",<矿池端口>,"<子账户名称>"] `字符串, 整数, 字符串`
   
+Save your config tho agent_conf.json
+将上述内容保存到agent_conf.json
+  
 ## 3. Start/Stop agent 启动/停止代理
 
 ```shell
@@ -70,12 +73,12 @@ mkdir log
 
 # stop: `kill` the process pid or use `Control+C`
 # 结束 ： 使用kill 命令杀掉进程或按 ctrl + c
-kill `pgrep 'agent'`
+kill `pgrep 'ltcagent'`
 ```
 
-## 3. Q&A 相关问题
+## 4. Q&A 相关问题
 
-### 3.1  recommand to use supervisor to manage it 推荐使用supervieor监控代理程序
+### 4.1  recommand to use supervisor to manage it 推荐使用supervieor监控代理程序
 
 Make this supervisord config file as agent.conf
 新建下面内容的supervisord 配置文件 名字是 agent.conf
@@ -83,7 +86,7 @@ Make this supervisord config file as agent.conf
 ```
 [program:agent]
 directory=/work/agent
-command=/work/agent/agent -c /work/agent/agent_conf.json -l /work/agent/log
+command=/work/agent/ltcagent -c /work/agent/agent_conf.json -l /work/agent/log
 autostart=true
 autorestart=true
 startsecs=3
@@ -109,11 +112,11 @@ agent                            RUNNING    pid 21296, uptime 0:00:09
 supervisor> exit
 ```
 
-### 3.2 How to run multi programs in one machine. 如何多开程序 
+### 4.2 How to run multi programs in one machine. 如何多开程序 
 Modify the config file make sure listen port is different.
 编辑配置文件确保监听端口不同即可。
 
-### 3.3 Too many open files problem. 打开文件句柄数目过多
+### 4.3 Too many open files problem. 打开文件句柄数目过多
 If you get Too many open files error, it means you need to increase the system file limits. Usually the default value is 1024 so you can't connect more than 1024 miners at one agent.
 
 一般系统默认最大句柄数1024个，这就限制了最大矿机连接量1024个。需要手动修改接触限制。
