@@ -111,6 +111,18 @@ supervisor> status
 agent                            RUNNING    pid 21296, uptime 0:00:09
 supervisor> exit
 ```
+modify supervisord min fd number.
+修改supervisord的fd数
+```
+vim /etc/supervisor/supervisord.conf
+
+# add or modify follow section
+# 增加或者修改下面字段
+
+[supervisord]
+minfds=65535
+```
+
 
 ### 4.2 How to run multi programs in one machine. 如何多开程序 
 Modify the config file make sure listen port is different.
