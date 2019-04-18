@@ -55,7 +55,7 @@ The contents of the configuration file are as follows.
    "offline_keep_mining":true,
    "pools":[  
       {  
-         "address":"ss.btc.poolin.com",
+         "address":"btc.ss.poolin.com",
          "port":443
       }
    ]
