@@ -1,7 +1,6 @@
 # Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
 
 ## 1. 安装docker
-
 |Platform|x86_64/amd64|ARM|ARM64/AARCH64|
 |---|---|---|---|
 |[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)|yes|no|yes|
@@ -106,6 +105,5 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 
 ## 7. 矿机连接
 
-1. 地址写刚才配置代理服务器的 **内网** IP
-2. 端口是agent_listen_port。代理监听的端口
-
+1. 地址是代理服务器的 **内网** IP
+2. 端口是`agent_listen_port`。代理监听的端口,在`agent_conf.json`中配置的。
