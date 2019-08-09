@@ -100,7 +100,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 2. 配置文件的`agent_listen_port`要记住，这里以`8888`为例
 
 ```shell
- run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 ```
 
 ## 7. 矿机连接
