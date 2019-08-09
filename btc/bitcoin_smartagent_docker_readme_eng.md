@@ -124,10 +124,21 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 2. Make sure you have create the config file `agent_conf.json` and have a `log` directory in the save `agent` directory.
 
 ```docker
- run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 ```
 
 ## 7. Miner connect
 
 1. address is the LAN IP of computer which the smart agent docker image is running on.
 2. Port is `agent_listen_port` which in your config file `agent_conf.json`.
+
+## 8. Check logs
+
+There are 2 way to check logs.
+
+1. All logs are in the `/agent/log/` dirctory.
+2. Input below command to see the realtime logs.
+
+```bash
+docker logs --tail=50 --follow btcagent
+```
