@@ -107,3 +107,14 @@ docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=
 
 1. 地址是代理服务器的 **内网** IP
 2. 端口是`agent_listen_port`。代理监听的端口,在`agent_conf.json`中配置的。
+
+## 8. 查看日志
+
+查看日志有2种方法。
+
+1. 在`/agent/log/`文件夹下有所有日志
+2. 输入下面命令以查看实时日志
+
+```bash
+docker logs --tail=50 --follow btcagent
+```
