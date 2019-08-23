@@ -91,7 +91,7 @@ agent/
 仅以linux下的操作为例。
 
 ```shell
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:1.1.0
 ```
 
 ## 6. 运行代理镜像
@@ -100,7 +100,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.1
 2. 配置文件的`agent_listen_port`要记住，这里以`8888`为例
 
 ```shell
-docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:0.0.2
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:1.1.0
 ```
 
 ## 7. 矿机连接
