@@ -45,7 +45,7 @@ ubuntu 18.04
 ## 2. Set configuration
 ### 2.1. make a config file
 ```bash
-touch agent_config.json
+touch agent_conf.json
 ```
 
 ### 2.2. modify the config file
