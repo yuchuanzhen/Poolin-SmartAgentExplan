@@ -115,7 +115,7 @@ The format of config file is showing down below. You can copy the example into y
 
 
 ```docker
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:1.1.0
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
 ```
 
 ## 6. Run docker imgae
@@ -124,7 +124,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:1.1.0
 2. Make sure you have create the config file `agent_conf.json` and have a `log` directory in the save `agent` directory.
 
 ```docker
-docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:1.1.0
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
 ```
 
 ## 7. Miner connect
