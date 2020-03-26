@@ -63,6 +63,14 @@ agent/
       {  
          "address":"btc.ss.poolin.com",
          "port":443
+      },
+      {  
+         "address":"btc.ss.poolin.com",
+         "port":25
+      },
+      {  
+         "address":"btc.ss.poolin.com",
+         "port":1883
       }
    ]
 }
@@ -81,7 +89,7 @@ agent/
 - agent_listen_port `[int 0 - 65535]`: 代理监听的端口. 
 - auto_start `[bool]`: 在linux 下无用. 
 - offline_keep_mining `[bool]`: 断网保持负载。断网情况下是否继续空转矿机以保持矿机的功率不下降。建议为false。 
-- pools`[list]`: 矿池地址的是相关配置。最多写三个。
+- pools`[list]`: 矿池地址的相关配置。最多写三个。配置多个矿池地址可以避免因网络抖动其中一个挖矿地址断开导致的矿机算力抖动。
   - address `[string]` : 矿池地址
   - port `[int 0-65535]` : 矿池端口
 
