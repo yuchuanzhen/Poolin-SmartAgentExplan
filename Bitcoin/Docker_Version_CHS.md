@@ -56,7 +56,7 @@ agent/
    "account_mode":0,
    "agent_listen_ip":"0.0.0.0",
    "agent_listen_port":8888,
-   "offline_disconnect_delay_sec":false,
+   "offline_disconnect_delay_sec":120,
    "pools":[  
       {  
          "address":"btc.ss.poolin.com",
