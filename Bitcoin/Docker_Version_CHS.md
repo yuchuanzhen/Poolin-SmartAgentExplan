@@ -56,9 +56,7 @@ agent/
    "account_mode":0,
    "agent_listen_ip":"0.0.0.0",
    "agent_listen_port":8888,
-   "agent_rpc_port":16580,
-   "auto_start":false,
-   "offline_keep_mining":false,
+   "offline_disconnect_delay_sec":false,
    "pools":[  
       {  
          "address":"btc.ss.poolin.com",
@@ -84,11 +82,9 @@ agent/
 - account_mode `[int 0-1]`: 代理的账号模式 
   - 0 : 将会使用每个矿机中的子账号。 本配置文件中的account字段则无效。
   - 1 : 将会使用本配置文件中account字段的子账号并且根据权重分配算力。矿机中的子账号无效。
-- agent_rpc_port `[int 0 - 65535]`: 在linux下无用
 - agent_listen_ip `[string]`: 代理监听的ip, 写 “0.0.0.0” 表示本机ip。
 - agent_listen_port `[int 0 - 65535]`: 代理监听的端口. 
-- auto_start `[bool]`: 在linux 下无用. 
-- offline_keep_mining `[bool]`: 断网保持负载。断网情况下是否继续空转矿机以保持矿机的功率不下降。建议为false。 
+- offline_disconnect_delay_sec `[int]`: 断网保持负载多长时间，单位为秒。断网期间，代理会不断尝试重新连接矿池，同时继续空转矿机以保持矿机的功率不下降。建议为120。 
 - pools`[list]`: 矿池地址的相关配置。最多写三个。配置多个矿池地址可以避免因网络抖动其中一个挖矿地址断开导致的矿机算力抖动。
   - address `[string]` : 矿池地址
   - port `[int 0-65535]` : 矿池端口
@@ -99,7 +95,7 @@ agent/
 仅以linux下的操作为例。
 
 ```shell
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.6
 ```
 
 ## 6. 运行代理镜像
@@ -108,7 +104,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
 2. 配置文件的`agent_listen_port`要记住，这里以`8888`为例
 
 ```shell
-docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.6
 ```
 
 ## 7. 矿机连接
