@@ -1,4 +1,7 @@
-# Poolin Litecoin SmartAgent Usage (docker)
+
+
+
+# Poolin Bitcoin SmartAgent Usage (docker)
 
 ## 1. Install docker
 
@@ -69,27 +72,50 @@ The format of config file is showing down below. You can copy the example into y
 
 
 ```json
-{
-    "agent_listen_ip": "0.0.0.0",
-    "agent_listen_port": 8888,
-    "pools": [
-        ["ltc.ss.poolin.com", 25, "replace_your_account"]
-    ]
+{  
+   "account":[  
+      {  
+         "name":"poolin",
+         "weight":1
+      }
+   ],
+   "account_mode":0,
+   "agent_listen_ip":"0.0.0.0",
+   "agent_listen_port":8888,
+   "agent_rpc_port":16580,
+   "auto_start":false,
+   "offline_keep_mining":false,
+   "pools":[  
+      {  
+         "address":"btc.ss.poolin.com",
+         "port":443
+      }
+   ]
 }
 ```
 
+
+- account `[array]`: agent account, if account_mode is 1, agent will use this account to mining in the pool. 
+  - name `[string]`: account 
+  - weight `[int 1-99]`: if there are multi account , agent will calculate the weight.
+- account_mode `[int 0-1]`: agent type. 
+  - 0 : Will use the account name in every miner.
+  - 1 : Will use the account name in this config file.
+- agent_rpc_port `[int 0-65535]` : useless . 
 - agent_listen_ip `[string]`:  Agent's listen IP address. 
 - agent_listen_port  `[int 0-65535]`: Agent's listen port, miners will connect to this port.
+- auto_start `[bool]`: useless.
+- offline_keep_mining  `[bool]`: useless
 - pools`[array]`: pools settings which Agent will connect. You can put serval pool's settings here.
-  - 1st ARG: `[string]` : Mining pool address. You can simply use `ltc.ss.poolin.com`.
-  - 2nd ARG: `[int 0-65535]` : Mining pool listen port.Poolin.com are use `1883`, `443`, `25`.
-  - 3rd ARG: `[string]` : Your mining account. 
+  - address `[string]` : Mining pool address. You can simply use `btc.ss.poolin.com`.
+  - port `[int 0-65535]` : Mining pool listen port.Poolin.com are use `1883`, `443`, `25`.
+
 
 ## 5. Download docker image 
 
 
 ```docker
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 ```
 
 ## 6. Run docker imgae
@@ -98,7 +124,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
 2. Make sure you have create the config file `agent_conf.json` and have a `log` directory in the save `agent` directory.
 
 ```docker
-docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
 ```
 
 ## 7. Miner connect
@@ -114,5 +140,5 @@ There are 2 way to check logs.
 2. Input below command to see the realtime logs.
 
 ```bash
-docker logs --tail=50 --follow ltcagent
+docker logs --tail=50 --follow btcagent
 ```

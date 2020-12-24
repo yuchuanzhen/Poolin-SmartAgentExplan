@@ -1,4 +1,4 @@
-# Poolin Litecoin 智能代理使用说明 (docker 方法运行)
+# Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
 
 ## 1. 安装docker
 |Platform|x86_64/amd64|ARM|ARM64/AARCH64|
@@ -46,23 +46,48 @@ agent/
 
 
 ```json
-{
-    "agent_listen_ip": "0.0.0.0",
-    "agent_listen_port": 8888,
-    "pools": [
-        ["ltc.ss.poolin.com", 25, "replace_your_account"]
-    ]
+{  
+   "account":[  
+      {  
+         "name":"poolin",
+         "weight":1
+      }
+   ],
+   "account_mode":0,
+   "agent_listen_ip":"0.0.0.0",
+   "agent_listen_port":8888,
+   "offline_disconnect_delay_sec":120,
+   "pools":[  
+      {  
+         "address":"ltc.ss.poolin.com",
+         "port":443
+      },
+      {  
+         "address":"ltc.ss.poolin.com",
+         "port":25
+      },
+      {  
+         "address":"ltc.ss.poolin.com",
+         "port":1883
+      }
+   ]
 }
 ```
 
 配置文件含义如下
 
+- account `[list]`: 代理子账号。如果account_mode 是1的话，代理会用这个作为子账号在矿池挖矿而不会使用矿机中的子账号。
+  - name `[string]`    : 子账号 
+  - weight `[int 1-99]`: 权重 ,如果有多个子账号，代理会把权重求和，然后计算每个账号对应的算力百分比. 
+- account_mode `[int 0-1]`: 代理的账号模式 
+  - 0 : 将会使用每个矿机中的子账号。 本配置文件中的account字段则无效。
+  - 1 : 将会使用本配置文件中account字段的子账号并且根据权重分配算力。矿机中的子账号无效。
 - agent_listen_ip `[string]`: 代理监听的ip, 写 “0.0.0.0” 表示本机ip。
 - agent_listen_port `[int 0 - 65535]`: 代理监听的端口. 
+- offline_disconnect_delay_sec `[int]`: 断网保持负载多长时间，单位为秒。断网期间，代理会不断尝试重新连接矿池，同时继续空转矿机以保持矿机的功率不下降。建议为120。 
 - pools`[list]`: 矿池地址的相关配置。最多写三个。配置多个矿池地址可以避免因网络抖动其中一个挖矿地址断开导致的矿机算力抖动。
-  - 第一个参数 `[string]` : 矿池地址
-  - 第二个参数 `[int 0-65535]` : 矿池端口
-  - 第三个参数 `[string]` : 子账户
+  - address `[string]` : 矿池地址
+  - port `[int 0-65535]` : 矿池端口
 
 
 ## 5. 下载docker镜像
@@ -70,7 +95,7 @@ agent/
 仅以linux下的操作为例。
 
 ```shell
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 ```
 
 ## 6. 运行代理镜像
@@ -79,7 +104,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
 2. 配置文件的`agent_listen_port`要记住，这里以`8888`为例
 
 ```shell
-docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --dns 119.29.29.29  --dns 182.254.116.116 --dns 1.1.1.1 --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/ltcagent:0.0.1
+docker run -d -v /agent/:/work/agent --name btcagent --network="host" --dns 119.29.29.29  --dns 182.254.116.116 --dns 1.1.1.1 --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 ```
 
 ## 7. 矿机连接
@@ -95,5 +120,5 @@ docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --dns 119.
 2. 输入下面命令以查看实时日志
 
 ```bash
-docker logs --tail=50 --follow ltcagent
+docker logs --tail=50 --follow btcagent
 ```
