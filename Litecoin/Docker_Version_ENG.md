@@ -87,7 +87,7 @@ The format of config file is showing down below. You can copy the example into y
    "offline_keep_mining":false,
    "pools":[  
       {  
-         "address":"btc.ss.poolin.com",
+         "address":"ltc.ss.poolin.com",
          "port":443
       }
    ]
@@ -107,7 +107,7 @@ The format of config file is showing down below. You can copy the example into y
 - auto_start `[bool]`: useless.
 - offline_keep_mining  `[bool]`: useless
 - pools`[array]`: pools settings which Agent will connect. You can put serval pool's settings here.
-  - address `[string]` : Mining pool address. You can simply use `btc.ss.poolin.com`.
+  - address `[string]` : Mining pool address. You can simply use `ltc.ss.poolin.com`.
   - port `[int 0-65535]` : Mining pool listen port.Poolin.com are use `1883`, `443`, `25`.
 
 
@@ -124,7 +124,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 2. Make sure you have create the config file `agent_conf.json` and have a `log` directory in the save `agent` directory.
 
 ```docker
-docker run -d -v /agent/:/work/agent --name btcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
+docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
 ```
 
 ## 7. Miner connect
@@ -140,5 +140,5 @@ There are 2 way to check logs.
 2. Input below command to see the realtime logs.
 
 ```bash
-docker logs --tail=50 --follow btcagent
+docker logs --tail=50 --follow ltcagent
 ```
