@@ -95,7 +95,7 @@ agent/
 仅以linux下的操作为例。
 
 ```shell
-docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.1.2
+docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 ```
 
 ## 6. 运行代理镜像
