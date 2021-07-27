@@ -124,7 +124,7 @@ docker pull registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 2. Make sure you have create the config file `agent_conf.json` and have a `log` directory in the save `agent` directory.
 
 ```docker
-docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.0.5
+docker run -d -v /agent/:/work/agent --name ltcagent --network="host" --restart=always registry.cn-beijing.aliyuncs.com/poolin_public/btcagent:3.2.1
 ```
 
 ## 7. Miner connect
