@@ -16,4 +16,23 @@
 - 可设置钉钉报警通知,代理健康状况随时掌控
 ---
 
+
+# Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
+
+
+## 1. 安装docker
+|Platform|x86_64/amd64|ARM|ARM64/AARCH64|
+|---|---|---|---|
+|[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)|yes|no|yes|
+|[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)|yes|yes|yes|
+|[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)|yes|no|yes|
+|[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes| 
+|[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |
+|[Mac](https://docs.docker.com/docker-for-mac/install/) | no | no | no |
+
+# 基础功能
+
+# 进阶功能
+
+
 ## 多种代理部署形式
