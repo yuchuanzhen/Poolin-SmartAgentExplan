@@ -14,6 +14,8 @@
 - 智能代理统一设置子账户(挖矿账户)
 
 - 可设置钉钉报警通知,代理健康状况随时掌控
+
+- 依据网络情况多样化部署
 ---
 
 
@@ -30,9 +32,17 @@
 |[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |
 |[Mac](https://docs.docker.com/docker-for-mac/install/) | no | no | no |
 
-# 基础功能
-
-# 进阶功能
-
+## 基础功能
+[base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
+## 进阶功能
+[further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ## 多种代理部署形式
+- 基本部署 <br>
+[]
+  
+- 多代理串联 <br>
+[]
+
+## 断网宝
+[no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
