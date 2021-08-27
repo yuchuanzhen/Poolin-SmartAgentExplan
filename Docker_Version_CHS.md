@@ -8,6 +8,7 @@
 |[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)|yes|yes|yes|
 |[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)|yes|no|yes|
 |[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes| 
+|[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |
 |[Mac](https://docs.docker.com/docker-for-mac/install/) | no | no | no |
 
 
@@ -27,7 +28,7 @@ run_poolin_btc_proxy.sh
 ```
 ---
 ---
-#基础功能
+# 基础功能
 
 ***脚本内容*** `vim run_poolin_proxy.sh`
 <br>
@@ -85,7 +86,7 @@ docker run -it --restart always -d \
         ${docker_version}
 ```
 
-###参数说明
+### 参数说明
 - 必填项
   - host_coin `[string]`       : 要代理的币种，目前支持BTC/ETH，其他币种后续逐渐支持。
 - 选填项
@@ -95,7 +96,7 @@ docker run -it --restart always -d \
 ---
 ---
 
-#进阶功能
+# 进阶功能
 ***本段内容是在上述基本挖矿代理基础上对一些进阶功能的补充描述，都为可选项，不配置不会影响代理挖矿***<br>
 ***以ETH代理配置为例：***
 
@@ -195,7 +196,7 @@ docker run -it --restart always -d \
         ${docker_version}
 ```
 
-###进阶配置参数说明
+### 进阶配置参数说明
 - 必填项
   - host_coin `[string]`       : 要代理的币种，目前支持BTC/ETH，其他币种后续逐渐支持。
 - 选填项
@@ -217,7 +218,7 @@ docker run -it --restart always -d \
 ---
 ---
 
-#运行及连接
+# 运行及连接
 ## 1. 运行代理
 
 ```shell
