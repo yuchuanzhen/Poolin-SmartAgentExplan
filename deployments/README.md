@@ -11,7 +11,7 @@
 up_server_address
 缺省值则默认到poolin全球负载均衡地址,会根据交互网络情况自动选取最优服务器进行连接
 
-亦可根据自身需求向poolin所要多个固定域名或ip以","分隔成服务器地址列表
+亦可根据自身需求向poolin索要多个固定域名或ip以","分隔成服务器地址列表
 ```
 
 ![base_deployment_mode](base_deployment_mode.png)
