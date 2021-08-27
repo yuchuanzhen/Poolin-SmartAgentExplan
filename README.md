@@ -22,7 +22,7 @@
 # Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
 
 
-## 1. 安装docker
+## 安装docker
 |Platform|x86_64/amd64|ARM|ARM64/AARCH64|
 |---|---|---|---|
 |[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)|yes|no|yes|
@@ -32,14 +32,20 @@
 |[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |
 |[Mac](https://docs.docker.com/docker-for-mac/install/) | no | no | no |
 
+---
 ## 基础功能
 [base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
+
+---
 ## 进阶功能
 [further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
+---
 ## 多种代理部署形式
 [deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)<br>
-
 ![deployments](deployments.png)
+
+---
 ## 断网宝
 [no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
+---
