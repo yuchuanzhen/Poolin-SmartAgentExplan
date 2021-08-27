@@ -2,7 +2,7 @@
 
 ## 基本代理模式
 
+![base_deployment_mode](base_deployment_mode.png)
 
-## 串联部署
 
-
+![mutiple_deployments_mode.png](mutiple_deployments_mode.png)

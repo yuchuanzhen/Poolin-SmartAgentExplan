@@ -38,11 +38,6 @@
 [further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ## 多种代理部署形式
-- 基本部署 <br>
-[]
-  
-- 多代理串联 <br>
-[]
-
+[deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
 ## 断网宝
 [no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
