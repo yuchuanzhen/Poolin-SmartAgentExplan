@@ -21,31 +21,26 @@
 
 # Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
 
+***Poolin 智能代理的运行依赖于docker***
 
 ## 安装docker
-|Platform|x86_64/amd64|ARM|ARM64/AARCH64|
-|---|---|---|---|
-|[CentOS](https://docs.docker.com/install/linux/docker-ce/centos/)|yes|no|yes|
-|[Debian](https://docs.docker.com/install/linux/docker-ce/debian/)|yes|yes|yes|
-|[Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)|yes|no|yes|
-|[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes| 
-|[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |
-|[Mac](https://docs.docker.com/docker-for-mac/install/) | no | no | no |
+|Platform|x86_64/amd64|ARM|ARM64/AARCH64|Docker安装教程|
+|---|---|---|---|---|
+|[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
+|[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |[点击查看](https://docs.docker.com/docker-for-windows/install/)|
 
 ---
-## 基础功能
+## 智能代理断网宝
+[no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
+---
+
+## 智能代理基础功能安装及运行教程
 [base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
 
----
-## 进阶功能
+##  智能代理进阶功能安装及运行教程
 [further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ---
-## 多种代理部署形式
+## 智能代理多种部署形式教程
 [deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)<br>
-![deployments](deployments.png)
 
----
-## 断网宝
-[no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
----
