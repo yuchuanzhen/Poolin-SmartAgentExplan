@@ -15,8 +15,8 @@ REM 连接上一级服务的模式 (代理默认AUTO)
 up_server_mode=
 REM `list` 指定当前代理的上级服务地址，可用","分隔多个
 up_server_address=
-REM 钉钉群token设置
-ding_ding=""
+REM 钉钉/Slack notify token设置
+notify_token=""
 REM 钉钉群当前代理标签
 host=""
 REM 设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
@@ -36,7 +36,7 @@ docker run -it --restart always -d ^
         --env UP_SERVER_MODE=%up_server_mode% ^
         --env HOST_COIN=%host_coin% ^
         --env USER_NAME=%user_name% ^
-        --env DING_DING=%ding_ding% ^
+        --env NOTIFY_TOKEN=%notify_token% ^
         --env HOST_COIN=%host_coin% ^
         -v /work:/work ^
         --name %docker_name% ^
