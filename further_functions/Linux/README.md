@@ -107,3 +107,5 @@ docker logs -f proxy_btc --follow --tail 10
     ```
 
     - host `[string]`            :钉钉群通知时代理机器的描述字符串，例如host="my_eth_proxy_001"
+  
+***系统不支持jouranlctl可将docker run中对应的行删除***
