@@ -29,7 +29,7 @@
 
 |Platform|x86_64/amd64|ARM|ARM64/AARCH64|Docker安装教程|
 |---|---|---|---|---|
-|[Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
+|[Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
 |[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |[点击查看](https://docs.docker.com/docker-for-windows/install/)|
 
 ---
