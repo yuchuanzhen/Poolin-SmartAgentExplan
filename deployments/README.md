@@ -1,6 +1,7 @@
 # Poolin 智能代理可以根据场地不同网络情况灵活部署
 
 ## 基本代理模式
+
 ```asm
 基本模式即:
 代理机器与矿机同处于局域网
@@ -17,6 +18,7 @@ up_server_address
 ![base_deployment_mode](base_deployment_mode.png)
 
 ## 串联模式
+
 ```asm
 多代理串联模式:
 可根据自身网络交互要求进行部署
