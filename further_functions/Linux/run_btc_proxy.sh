@@ -2,6 +2,7 @@ set -ex
 #必填
 host_coin=BTC
 
+#选填
 proxy_port=
 docker_name=
 
@@ -14,7 +15,7 @@ up_server_mode=
 up_server_address=
 #钉钉/Slack notify token设置
 notify_token=""
-#钉钉群当前代理标签
+#notify当前代理标签
 host=""
 #设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
 user_name=""
@@ -29,7 +30,7 @@ if [ -z "${docker_name}" ]; then
 fi
 
 # proxy_port
-f [ -z "${proxy_port}" ]; then
+if [ -z "${proxy_port}" ]; then
         case $host_coin in
                 "BTC")
                         proxy_port=8001

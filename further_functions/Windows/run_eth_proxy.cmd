@@ -17,7 +17,7 @@ REM `list` 指定当前代理的上级服务地址，可用","分隔多个
 up_server_address=
 REM 钉钉/Slack notify token设置
 notify_token=""
-REM 钉钉群当前代理标签
+REM notify当前代理标签
 host=""
 REM 设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
 user_name=""

@@ -15,7 +15,7 @@ if [ -z "${docker_name}" ]; then
 fi
 
 # proxy_port  未填写则默认以下值
-f [ -z "${proxy_port}" ]; then
+if [ -z "${proxy_port}" ]; then
         case $host_coin in
                 "BTC")
                         proxy_port=8001

@@ -42,5 +42,5 @@
 
 ---
 ## 智能代理多种部署形式教程
-[deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)<br>
+[deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
 
