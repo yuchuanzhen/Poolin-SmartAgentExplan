@@ -106,6 +106,6 @@ docker logs -f proxy_btc --follow --tail 10
     notify_token="https://hooks.slack.com/services/T01A3MY4UTW/B02CS0JU8KC/PsQd...j0Lq"
     ```
 
-    - host `[string]`            :钉钉群通知时代理机器的描述字符串，例如host="my_eth_proxy_001"
+    - host `[string]`            :钉钉/Slack通知时代理机器的描述字符串，例如host="my_eth_proxy_001"
   
 ***系统不支持jouranlctl可将docker run中对应的行删除***
