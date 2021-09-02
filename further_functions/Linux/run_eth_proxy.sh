@@ -19,6 +19,10 @@ notify_token=""
 host=""
 #设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
 user_name=""
+#健康检查检测失败时间设置
+health_check_fail_duration=
+#share 拒绝数计量
+reject_share_count=
 #----------------------------------------------------
 
 
@@ -93,6 +97,8 @@ docker run -it --restart always -d \
         --env USER_NAME=${user_name} \
         --env NOTIFY_TOKEN=${notify_token} \
         --env HOST=${host} \
+        --env HEALTH_CHECK_FAIL_DURATION=${health_check_fail_duration} \
+        --env REJECT_SHARE_COUNT=${reject_share_count} \
         --log-opt mode=non-blocking --log-opt max-buffer-size=4m --log-driver journald \
         -v /work:/work \
         --name ${docker_name} \

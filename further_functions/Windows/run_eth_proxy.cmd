@@ -21,6 +21,10 @@ REM notify当前代理标签
 host=""
 REM 设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
 user_name=""
+REM 健康检查检测失败时间设置
+health_check_fail_duration=
+REM share 拒绝数计量
+reject_share_count=
 REM ------------------------------------------------------
 
 docker pull %docker_version%
@@ -38,6 +42,8 @@ docker run -it --restart always -d ^
         --env USER_NAME=%user_name% ^
         --env NOTIFY_TOKEN=%notify_token% ^
         --env HOST_COIN=%host_coin% ^
+        --env HEALTH_CHECK_FAIL_DURATION=%health_check_fail_duration% ^
+        --env REJECT_SHARE_COUNT=%reject_share_count% ^
         -v /work:/work ^
         --name %docker_name% ^
         -p %proxy_port%:1801 ^

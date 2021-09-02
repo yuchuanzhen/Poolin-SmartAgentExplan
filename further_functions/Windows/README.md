@@ -96,5 +96,8 @@ docker logs -f proxy_btc --follow --tail 10
       notify_token="https://oapi.dingtalk.com/robot/send?access_token=ccfe489...c7f673"
       notify_token="https://hooks.slack.com/services/T01A3MY4UTW/B02CS0JU8KC/PsQd...j0Lq"
       ```
+    - health_check_fail_duration `[int]`:代理健康检查检测失败时间设置 单位分钟 0:表示永远保持矿机连接，默认值为1分钟，如果健康检查失败超过一分钟则重启代理服务
+    - reject_share_count `[int]`  :矿机提交最后一个被接受share后, 累计拒绝 share 数量最大值，若设置为0则不做判断,默认值 10，超过则断开矿机
+
 
   - host `[string]`            :钉钉/Slack通知时代理机器的描述字符串，例如host="my_eth_proxy_001"
