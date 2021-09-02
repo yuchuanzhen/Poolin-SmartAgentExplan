@@ -14,43 +14,46 @@
 
 - 智能代理统一设置子账户(挖矿账户)
 
-- 可设置钉钉/Slack报警通知,代理健康状况随时掌控
+- 可设置 钉钉/Slack 报警通知,代理健康状况随时掌控
 
 - 依据网络情况多样化部署
 
 ---
 
-## Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
+## Poolin 智能代理使用说明
 
-***Poolin 智能代理的运行依赖于docker***
+***Poolin 智能代理的运行依赖于 docker***
 
-## 安装docker
+## 第一步: 安装docker
 
-|Platform|x86_64/amd64|ARM|ARM64/AARCH64|Docker安装教程|
-|---|---|---|---|---|
-|[Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|yes|yes|yes|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
-|[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |[点击查看](https://docs.docker.com/docker-for-windows/install/)|
-|[Mac](https://docs.docker.com/desktop/mac/install/)|yes | no | no |[点击查看](https://docs.docker.com/desktop/mac/install/)|
-
+|操作系统|Docker安装教程|
+|---|---|
+|[Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
+|[Windows](https://docs.docker.com/docker-for-windows/install/)|[点击查看](https://docs.docker.com/docker-for-windows/install/)|
+|[Mac](https://docs.docker.com/desktop/mac/install/) |[点击查看](https://docs.docker.com/desktop/mac/install/)|
 
 ---
 
-## 智能代理断网宝
+## 第二步: 启动代理
+
+[base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
+
+---
+
+## 可选: 断网宝服务
+
+断网宝用于断网场景下, 保持矿机运行, 维持矿场电力负载稳定
 
 [no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
 
 ---
 
-## 智能代理基础功能安装及运行教程
-
-[base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
-
-## 智能代理进阶功能安装及运行教程
+## 可选: 更多参数设置
 
 [further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ---
 
-## 智能代理多种部署形式教程
+## 可选: 多种部署形式
 
 [deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
