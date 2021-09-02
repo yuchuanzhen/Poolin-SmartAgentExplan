@@ -20,7 +20,6 @@
 
 ---
 
-
 ## Poolin Bitcoin 智能代理使用说明 (docker 方法运行)
 
 ***Poolin 智能代理的运行依赖于docker***
@@ -33,21 +32,23 @@
 |[Windows](https://docs.docker.com/docker-for-windows/install/)|yes | no | no |[点击查看](https://docs.docker.com/docker-for-windows/install/)|
 
 ---
+
 ## 智能代理断网宝
 
 [no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
+
 ---
 
 ## 智能代理基础功能安装及运行教程
 
 [base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
 
-##  智能代理进阶功能安装及运行教程
+## 智能代理进阶功能安装及运行教程
 
 [further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ---
+
 ## 智能代理多种部署形式教程
 
 [deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
-

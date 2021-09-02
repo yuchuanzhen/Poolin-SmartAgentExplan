@@ -1,6 +1,7 @@
 # Poolin智能代理基本功能运行脚本
 
 ---
+
 ***Linux***
 
 ## 硬件要求
@@ -15,7 +16,7 @@
 
 - 创建目录
   
- ```asm
+```asm
 makdir -p /work/script
 ```
 
@@ -68,6 +69,7 @@ docker logs -f proxy_btc --follow --tail 10
 ```
 
 ---
+
 ***本脚本仅支持基本的挖矿代理，需要更多功能请查看进阶版本说明***
 
 ***系统不支持jouranlctl可将docker run中对应的行删除***

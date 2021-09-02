@@ -1,7 +1,9 @@
 # Poolin No_Network_Pool Usage
 
-## 断网宝:
+## 断网宝
+
 - 场地断网情况不掉负荷，降低对电力设备的损坏。
+
 ---
 
 ```asm
@@ -10,8 +12,8 @@
 继续保持电力消耗，达到稳定负荷的作用。
 ```
 
-
 ### 安装方法
+
 [断网宝Linux安装教程](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool/Linux)
 
 [断网宝Windows安装教程](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool/Windows)
@@ -27,6 +29,7 @@
 ```
 
 #### 例如
+
 ```asm
 第一挖矿地址: stratum+tcp://192.168.1.254:8001
 第一挖矿地址: stratum+tcp://btc.ss.poolin.com:443

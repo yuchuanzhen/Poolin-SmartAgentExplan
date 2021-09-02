@@ -1,7 +1,9 @@
 # Poolin智能代理基本功能运行脚本
 
 ---
+
 ***Windows***
+
 ## 硬件及系统要求
 
 ```asm
@@ -10,6 +12,7 @@
 ```
 
 ---
+
 ## ETH 代理运行
 
 - 创建目录
@@ -47,6 +50,7 @@ C:/work/script
 ```
 
 - 查看日志
+
 ```asm
 docker logs -f proxy_btc --follow --tail 10
 ```
@@ -66,4 +70,5 @@ docker logs -f proxy_btc --follow --tail 10
 ```
 
 ---
+
 ***本脚本仅支持基本的挖矿代理，需要更多功能请查看进阶版本说明***

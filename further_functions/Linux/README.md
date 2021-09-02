@@ -1,6 +1,7 @@
 # Poolin智能代理基本功能运行脚本
 
 ---
+
 ***Linux***
 
 ## 硬件要求
@@ -10,6 +11,7 @@
 ```
 
 ---
+
 ## ETH 代理运行
 
 - 创建目录
@@ -98,10 +100,10 @@ docker logs -f proxy_btc --follow --tail 10
 
     - user_name `[string]`       :代理机器设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)。
     - up_server_address`[list]`  :代理可以连接的poolin矿池地址用","分隔，默认 eth-agent3.ss.poolin.com。
-    - notify_token `[string]`    :用于代理运行时候异常报警出口：目前支持钉钉/Slack的机器人，此处填写机器人token，可及时提示代理任何异常，例如job超时，网络延迟等<br>
-    例如: <br>
+    - notify_token `[string]`    :用于代理运行时候异常报警出口：目前支持钉钉/Slack的机器人，此处填写机器人token，可及时提示代理任何异常，例如job超时，网络延迟等;
 
     ```asm
+    例如:
     notify_token="https://oapi.dingtalk.com/robot/send?access_token=ccfe489...c7f673"
     notify_token="https://hooks.slack.com/services/T01A3MY4UTW/B02CS0JU8KC/PsQd...j0Lq"
     ```
