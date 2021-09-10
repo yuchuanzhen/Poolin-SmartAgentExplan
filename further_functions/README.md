@@ -12,7 +12,7 @@
     - CONFUSE    混淆模式:(满足部分矿场需求): 随机选择 ip, 单个 ip 通信时间不会超过 60 分钟, 可能连接到境外 ip, 会切换到通信不好的 ip 上, 可能影响算力。
 
   - user_name `[string]`       : 代理机器设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)。
-  - up_server_address`[list]`  : 代理可以连接的poolin矿池地址用","分隔，默认 eth-agent3.ss.poolin.com。
+  - up_server_address`[list]`  : 代理可以连接的 poolin 矿池地址用","分隔，默认 eth-agent3.ss.poolin.com。
   - notify_token `[string]`    : 用于代理运行时候异常报警出口：目前支持钉钉/Slack的机器人，此处填写机器人token，可及时提示代理任何异常，例如 job 超时，网络延迟等;
 
   ```asm
