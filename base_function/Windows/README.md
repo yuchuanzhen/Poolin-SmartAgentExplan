@@ -126,3 +126,5 @@ docker logs -f proxy_dash --follow --tail 10
 ---
 
 ***本脚本仅支持基本的挖矿代理，需要更多功能请查看进阶版本说明***
+
+[更多更能设置说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
