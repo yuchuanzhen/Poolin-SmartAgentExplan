@@ -10,9 +10,9 @@
   - docker_name `[string]`     : 代理docker容器名称，默认名称   BTC：proxy_btc ETH: proxy_eth。
 
 - 进阶参数（非必填）
-  - up_server_mode `[string]`  : 连接上一级服务的模式 (代理默认AUTO)
+  - up_server_mode `[string]`  : 连接上一级服务(通常为矿池)的模式 (代理默认AUTO)
     - AUTO       自动模式:(proxy 默认): 自动选择网络通信最好的 ip；
-    - SEQUENCE   顺序模式:(pool server 默认): 按配置文件的顺序设置 ip 优先级，若优先级高的 ip 不可用, 会选择下一个优先级最高的 ip. 优先级最高的 ip 可用后, 会自动切回；
+    - SEQUENCE   顺序模式:(pool server 默认): 按配置文件的顺序设置 ip 优先级，若优先级高的 ip 不可用, 会依次按优先级选择下一个 ip. 优先级最高的 ip 可用后, 会自动切回；
     - CONFUSE    混淆模式:(满足部分矿场需求): 随机选择 ip, 单个 ip 通信时间不会超过 60 分钟, 可能连接到境外 ip, 会切换到通信不好的 ip 上, 可能影响算力。
 
     - user_name `[string]`       :代理机器设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)。
