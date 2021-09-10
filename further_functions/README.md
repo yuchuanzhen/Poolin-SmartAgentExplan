@@ -1,15 +1,13 @@
-# Poolin智能代理基本功能运行脚本
+# 智能代理参数设置说明
 
-## 更多功能
-
-### 配置参数说明
+## 配置参数说明
 
 - 必填项
   - host_coin `[string]`       : 要代理的币种，目前支持BTC/ETH，其他币种后续逐渐支持。
   - proxy_port `[int 0-65535]` : 代理机器stratum 端口，默认端口 BTC：8001， ETH：8005；可根据端口占用实际情况修改。
   - docker_name `[string]`     : 代理docker容器名称，默认名称   BTC：proxy_btc ETH: proxy_eth。
 
-- 进阶参数（非必填）
+- 可选项
   - up_server_mode `[string]`  : 连接上一级服务(通常为矿池)的模式 (代理默认AUTO)
     - AUTO       自动模式:(proxy 默认): 自动选择网络通信最好的 ip；
     - SEQUENCE   顺序模式:(pool server 默认): 按配置文件的顺序设置 ip 优先级，若优先级高的 ip 不可用, 会依次按优先级选择下一个 ip. 优先级最高的 ip 可用后, 会自动切回；
