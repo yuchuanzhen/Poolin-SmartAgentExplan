@@ -53,7 +53,7 @@
 
 ## 第二步: 启动代理
 
-[base_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
+[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
 
 ---
 
@@ -61,16 +61,16 @@
 
 断网宝用于断网场景下, 保持矿机运行, 维持矿场电力负载稳定
 
-[no_net_work_pool](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
+[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
 
 ---
 
 ## 可选: 更多参数设置
 
-[further_function](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
+[参数说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
 
 ---
 
 ## 可选: 多种部署形式
 
-[deployments](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
+[更多网络拓扑结构支持](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
