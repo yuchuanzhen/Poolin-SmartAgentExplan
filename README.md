@@ -53,7 +53,7 @@
 
 ## 第二步: 启动代理
 
-[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/base_function)
+[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/run_scripts)
 
 ---
 
@@ -67,7 +67,7 @@
 
 ## 可选: 更多参数设置
 
-[参数说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
+[参数说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/parameters)
 
 ---
 
