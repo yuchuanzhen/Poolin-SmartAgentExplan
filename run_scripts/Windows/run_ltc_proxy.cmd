@@ -12,19 +12,19 @@ REM -----------further founction settings-----------------
 REM 均为可填选项
 
 REM 连接上一级服务的模式 (代理默认AUTO)
-up_server_mode=
+set up_server_mode=
 REM `list` 指定当前代理的上级服务地址，可用","分隔多个
-up_server_address=
+set up_server_address=
 REM 钉钉/Slack notify token设置
-notify_token=""
+set notify_token=""
 REM notify当前代理标签
-host=""
+set host=""
 REM 设置矿机统一子账号(默认为空,矿机设置生效,非空则以代理设置为准)
-user_name=""
+set user_name=""
 REM 健康检查检测失败时间设置
-health_check_fail_duration=
+set health_check_fail_duration=
 REM share 拒绝数计量
-reject_share_count=
+set reject_share_count=
 REM ------------------------------------------------------
 
 docker pull %docker_version%
