@@ -15,9 +15,9 @@
   - up_server_address`[list]`  : 代理可以连接的 poolin 矿池地址用","分隔，默认 eth-agent3.ss.poolin.com。
   - notify_token `[string]`    : 用于代理运行时候异常报警出口：此处填写机器人 token，可及时提示代理任何异常，例如 job 超时，网络延迟等;
     - 目前支持机器人包括
-      - 钉钉
-      - Slack
-      - 企业微信
+      - 钉钉 https://blog.csdn.net/u011019141/article/details/94222443
+      - Slack https://my.slack.com/services/new/incoming-webhook/ 
+      - 企业微信 https://work.weixin.qq.com/api/doc/90000/90136/91770
 
   ```asm
   例如:
