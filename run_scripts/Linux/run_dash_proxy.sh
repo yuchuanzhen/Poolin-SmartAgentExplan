@@ -80,6 +80,8 @@ if [ -z "${proxy_port}" ]; then
   echo "proxy_port not set, default value: ${proxy_port}"
 fi
 
+docker system prune -a -f
+
 docker_version=registry.cn-beijing.aliyuncs.com/poolin_public/proxy_dash:latest
 docker pull ${docker_version}
 

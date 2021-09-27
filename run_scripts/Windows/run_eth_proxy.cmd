@@ -27,6 +27,8 @@ REM share 拒绝数计量
 set reject_share_count=
 REM ------------------------------------------------------
 
+docker system prune -a -f
+
 docker pull %docker_version%
 
 docker stop -t 3 %docker_name%
