@@ -36,3 +36,26 @@ up_server_address:
 ```
 
 ![mutiple_deployments_mode.png](mutiple_deployments_mode.png)
+
+
+## remote_proxy 设置
+
+```asm
+在remote_proxy代理启动脚本中加入以下2个参数
+pub_port=9001
+stream_port=10001
+
+在docker run 的部分修改
+-p ${proxy_port}:1801 \
+为
+-p ${proxy_port}:1801 -p ${pub_port}:1822 -p ${stream_port}:1832 \
+```
+
+## local_proxy 设置
+```asm
+设置up_server_address为remote_proxy的ip和上述映射端口
+例如：
+up_server_address='192.168.0.254|9001|10001'
+
+若多个up_server_address可用逗号分隔进行配置
+```
