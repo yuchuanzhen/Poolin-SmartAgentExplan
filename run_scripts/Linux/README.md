@@ -1,0 +1,132 @@
+# Poolin智能代理基本功能运行脚本
+
+---
+
+***Linux***
+
+## 硬件要求
+
+```asm
+机器配置： 最低配置要求 2C 2G及以上，推荐 4C 4G及以上
+```
+
+---
+
+## ETH 代理运行
+
+- 创建目录
+  
+```asm
+makdir -p /work/script
+```
+
+- 将对应的ETH代理脚本拷贝到上述目录
+- 运行ETH代理脚本
+
+```asm
+bash /work/script/run_eth_proxy.sh
+```
+
+- 查看日志
+
+```asm
+docker logs -f proxy_eth --follow --tail 10
+```
+
+## BTC 代理运行
+
+- 创建目录
+
+ ```asm
+makdir -p /work/script
+```
+
+- 将对应的BTC代理脚本拷贝到上述目录
+- 运行BTC代理脚本
+
+```asm
+bash /work/script/run_btc_proxy.sh
+```
+
+- 查看日志
+  
+```asm
+docker logs -f proxy_btc --follow --tail 10
+```
+
+## LTC 代理运行
+
+- 创建目录
+
+ ```asm
+makdir -p /work/script
+```
+
+- 将对应的LTC代理脚本拷贝到上述目录
+- 运行LTC代理脚本
+
+```asm
+bash /work/script/run_ltc_proxy.sh
+```
+
+- 查看日志
+  
+```asm
+docker logs -f proxy_ltc --follow --tail 10
+```
+
+## DASH 代理运行
+
+- 创建目录
+
+ ```asm
+makdir -p /work/script
+```
+
+- 将对应的DASH代理脚本拷贝到上述目录
+- 运行DASH代理脚本
+
+```asm
+bash /work/script/run_dash_proxy.sh
+```
+
+- 查看日志
+  
+```asm
+docker logs -f proxy_dash --follow --tail 10
+```
+
+
+## 连接矿机
+
+### ETH连接代理
+
+```asm
+矿机挖矿地 stratum+tcp://本机ip:8005
+```
+
+### BTC连接代理
+
+```asm
+矿机挖矿地 stratum+tcp://本机ip:8001
+```
+
+### LTC连接代理
+
+```asm
+矿机挖矿地 stratum+tcp://本机ip:8002
+```
+
+### DASH连接代理
+
+```asm
+矿机挖矿地 stratum+tcp://本机ip:8003
+```
+
+---
+
+***本脚本仅支持基本的挖矿代理，需要更多功能请查看进阶版本说明***
+
+[更多功能设置说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/further_functions)
+
+***系统不支持 journal 可将 docker run 中对应的行删除***

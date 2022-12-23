@@ -1,144 +1,76 @@
-# Poolin-SmartAgentExplan
-Poolin智能代理使用说明
+# Poolin Smart Agent Usage
 
-## 1. Install depency 安装依赖
+## 币印新版智能代理特色
 
-You can just follow the instructions below.
+- 外网网络连接降低至个位数
 
-依照下属操作即可
+- 支持外网 ip 混淆, 约 10 分钟 - 1 小时切换一次 ip 地址
 
-```shell
-apt-get update
-apt-get install -y build-essential cmake git
+- 流量全加密
 
-#
-# install libevent
-#
-mkdir -p /root/source && cd /root/source
-wget https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz
-tar zxvf libevent-2.0.22-stable.tar.gz
-cd libevent-2.0.22-stable
-./configure
-make
-make install
+- 大幅缩减网络流量, 1 台矿机 vs 1 万台矿机, 下行流量几乎不变, 上行流量减少 85%
 
-#
-# install glog
-#
-mkdir -p /root/source && cd /root/source
-wget https://github.com/google/glog/archive/v0.3.4.tar.gz
-tar zxvf v0.3.4.tar.gz
-cd glog-0.3.4
-./configure && make && make install
-```
+- 单台代理支撑 2w - 20w 矿机(依赖主机性能)
 
-## 2. Make config file for agent 为代理程序创建一个配置文件
+- 智能代理统一设置子账户(挖矿账户)
 
-The contents of the configuration file are as follows.
+- 可设置 钉钉/Slack 报警通知,代理健康状况随时掌控
 
-配置文件的内容如下。
+- 按客户特殊需求支持多种复杂网络拓扑结构
 
+***智能代理支持币种持续上线中***
 
-```json
-{
-    "agent_listen_ip": "0.0.0.0",
-    "agent_listen_port": 3333,
-    "pools": [
-        ["ltc.ss.poolin.com", 1800, "poolin"],
-        ["ltc.ss.poolin.com", 1800, "poolin"]
-    ]
-}
-```
+|支持币种|默认端口|备注|
+|---|---|---|
+|BTC|8001|已支持|
+|ETH|8005|已支持|
+|LTC|8002|已支持|
+|DASH|8003|已支持|
+|ZEC|8006|近期开放|
+|BCH|8010|近期开放|
+|DCR|8012|近期开放|
+|BSV|8017|近期开放|
+|HNS|8020|近期开放|
+|CKB|8023|近期开放|
+|ZEN|8024|近期开放|
+|STC|8026|近期开放|
 
-- agent_listen_ip :  Agent's listen IP address. `string`
-- agent_listen_port : Agent's listen port, miners will connect to this port.`int 0 - 65535`
-- pools: pools settings which Agent will connect. You can put serval pool's settings here.`array`
-  - ["<stratum_server_host>", <stratum_server_port>, "<pool_username>"]`array`
-  
-- agent_listen_ip : 代理监听的ip, 写 “0.0.0.0” 表示本机ip。 `字符串`
-- agent_listen_port : 代理监听的端口. `整数 0 - 65535`
-- pools: 矿池地址的是相关配置。最多写三个。`数组`
-  - ["<矿池地址>",<矿池端口>,"<子账户名称>"] `字符串, 整数, 字符串`
-  
-Save your config tho agent_conf.json
-将上述内容保存到agent_conf.json
-  
-## 3. Start/Stop agent 启动/停止代理
+---
 
-```shell
-# start
-# 启动
-mkdir log
-./ltcagent -c agent_conf.json -l log
+## Poolin 智能代理使用说明
 
-# stop: `kill` the process pid or use `Control+C`
-# 结束 ： 使用kill 命令杀掉进程或按 ctrl + c
-kill `pgrep 'ltcagent'`
-```
+***Poolin 智能代理的运行依赖于 docker***
 
-## 4. Q&A 相关问题
+## 第一步: 安装docker
 
-### 4.1  recommand to use supervisor to manage it 推荐使用supervieor监控代理程序
+|操作系统|Docker安装教程|
+|---|---|
+|[Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|[点击查看](https://docs.docker.com/install/linux/docker-ce/ubuntu/)|
+|[Windows](https://docs.docker.com/docker-for-windows/install/)|[点击查看](https://docs.docker.com/docker-for-windows/install/)|
+|[Mac](https://docs.docker.com/desktop/mac/install/) |[点击查看](https://docs.docker.com/desktop/mac/install/)|
 
-Make this supervisord config file as agent.conf
-新建下面内容的supervisord 配置文件 名字是 agent.conf
+---
 
-```
-[program:agent]
-directory=/work/agent
-command=/work/agent/ltcagent -c /work/agent/agent_conf.json -l /work/agent/log
-autostart=true
-autorestart=true
-startsecs=3
-startretries=100
-```
+## 第二步: 启动代理
 
-执行以下命令
+[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/run_scripts)
 
-```shell
-$ mkdir -p /work/agent
-$ cd /work/agent
-# copy ltcagent and config.json into this dir
-# 拷贝配置代理的配置文件和二进制程序到本目录
-$ apt-get install -y supervisor
-$ cp agent.conf /etc/supervisor/conf.d/
-$ supervisorctl
-supervisor> reread
-agent: available
-supervisor> update
-agent: added process group
-supervisor> status
-agent                            RUNNING    pid 21296, uptime 0:00:09
-supervisor> exit
-```
+---
 
-### 4.2 How to run multi programs in one machine. 如何多开程序 
-Modify the config file make sure listen port is different.
-编辑配置文件确保监听端口不同即可。
+## 可选: 断网宝服务
 
-### 4.3 Too many open files problem. 打开文件句柄数目过多
-If you get Too many open files error, it means you need to increase the system file limits. Usually the default value is 1024 so you can't connect more than 1024 miners at one agent.
+断网宝用于断网场景下, 保持矿机运行, 维持矿场电力负载稳定
 
-一般系统默认最大句柄数1024个，这就限制了最大矿机连接量1024个。需要手动修改接触限制。
+[启动脚本](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/no_nework_pool)
 
-```vi
-vim /etc/security/limits.conf
-# open this config file，add follow lines.
-# 打开这个配置文件, 新增下面4行
-root soft nofile 65535
-root hard nofile 65535
-* soft nofile 65535
-* hard nofile 65535
+---
 
-## :wq 保存退出vim
-```
+## 可选: 更多参数设置
 
-You need to logout shell than login again. Check the value, should as below:
-```
-$ ulimit -Sn
-65535
-$ ulimit -Hn
-65535
-```
+[参数说明](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/parameters)
 
+---
 
+## 可选: 多种部署形式
+
+[更多网络拓扑结构支持](https://github.com/iblockin/Poolin-SmartAgentExplan/tree/master/deployments)
